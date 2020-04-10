@@ -21,10 +21,12 @@ const getUsers = async (req, res, next) => {
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+
     return next(
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
+
 
   const { name, email, password } = req.body;
 
@@ -50,8 +52,7 @@ const signup = async (req, res, next) => {
   const createdUser = new User({
     name: name,
     email: email,
-    image:
-      "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    image: req.file.path,
     password: password,
     places: [],
   });
