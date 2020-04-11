@@ -48,7 +48,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/mern")
+  .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`)
   .then(() => {
     app.listen(5000);
   })

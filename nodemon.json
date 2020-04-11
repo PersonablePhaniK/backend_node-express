@@ -1,0 +1,7 @@
+{
+    "env": {
+        "DB_NAME": "mern",
+        "GOOGLE_API_KEY": "AIzaSyAm4oH6ko-43DS7iK2pyLW0KOv2VAf2Dy8",
+        "JWT_KEY": "metahuman_dont_share"
+    }
+}
